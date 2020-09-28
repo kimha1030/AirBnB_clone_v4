@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  $.get('http://172.17.0.2:5001/api/v1/status/', function (data) {
+  $.get('http://0.0.0.0:5001/api/v1/status/', function (data) {
     console.log(data.status);
     if (data.status === 'OK') {
       console.log(data.status);
