@@ -10,15 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
         success: function (response) {
           console.log(response);
           $.each(response, function (i, place) {
-            $('.places').append($('<article class="site one"></article>'));
-            $('.site one').append($('<div class="info"></div>'));
-            $('.info').append($('<h2></h2>').text(place.name));
-            $('.info').append($('<div class="price_by_night"></div>').text(place.price_by_night));
-            $('.site one').append($('<div class="information"></div>'));
-            $('.information').append($('<div class="max_guest"></div>').text(place.max_guest));
-            $('.information').append($('<div class="number_rooms"></div>').text(place.number_rooms));
-            $('.information').append($('<div class="number_bathrooms"></div>').text(place.number_bathrooms));
-            $('.site one').append($('<div class="description"></div>').text(place.description));
+            let valuedHTML = '<article class="site one"><div class="info"> <h2>' + place.name + '</h2> <div class="price_by_night">' + place.price_by_night + '</div></div><div class="information"><div class="max_guest"><div class="icon_guests"></div>' + place.max_guest + ' Guests</div><div class="number_rooms"><div class="icon_bedrooms"></div>' + place.number_rooms + ' Bedroom</div><div class="number_bathrooms"><div class="icon_bathrooms"></div>' + place.number_bathrooms + ' Bathroom</div></div><div class="description"><p>' + place.description + '</p></div> </article>';
+            $('.places').append(valueHTML);
           });
         }
       });
