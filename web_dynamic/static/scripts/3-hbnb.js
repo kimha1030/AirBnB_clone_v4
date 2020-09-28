@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
         success: function (response) {
           console.log(response);
           $.each(response, function (i, place) {
-            let valuedHTML = '<article class="site one"><div class="info"> <h2>' + place.name + '</h2> <div class="price_by_night">' + place.price_by_night + '</div></div><div class="information"><div class="max_guest"><div class="icon_guests"></div>' + place.max_guest + ' Guests</div><div class="number_rooms"><div class="icon_bedrooms"></div>' + place.number_rooms + ' Bedroom</div><div class="number_bathrooms"><div class="icon_bathrooms"></div>' + place.number_bathrooms + ' Bathroom</div></div><div class="description"><p>' + place.description + '</p></div> </article>';
+            let valueHTML = '<article class="site one"><div class="info"> <h2>' + place.name +
+              '</h2> <div class="price_by_night">' + place.price_by_night +
+              '</div></div><div class="information"><div class="max_guest"><div class="icon_guests"></div>'
+              + place.max_guest + ' Guests</div><div class="number_rooms"><div class="icon_bedrooms"></div>'
+              + place.number_rooms + ' Bedroom</div><div class="number_bathrooms"><div class="icon_bathrooms"></div>'
+              + place.number_bathrooms + ' Bathroom</div></div><div class="description"><p>' + place.description +
+              '</p></div> </article>';
             $('.places').append(valueHTML);
           });
         }
